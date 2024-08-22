@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="src/darcy.ico" type="image/x-icon">
+	<link rel="icon" href="src/darcy.ico" type="image/x-icon">
+	<meta name="author" content="kasha">
+	<meta name="description" content="Sorter for Touhou songs. Pick your sources, and hit the Start button.">
+	<meta name="keywords" content="touhou song sorting">
+	<meta name="generator" content="notepad">
+
+	<meta property="og:title" content="Touhou Song Sorting">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://kasha.dev/song/images/FI9IsdC.jpg">
+	<meta property="og:url" content="https://kasha.dev/song/">
+	<meta property="og:description" content="Sorter for Touhou songs. Pick your sources, and hit the Start button.">
+
+	<title>Misericorde Song Sorter</title>
+
+	<noscript></noscript>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="src/jstorage.js"></script>
+	<script> /* $.jStorage is now available */ </script>
+	<script src="src/helpers.js"></script>
+	<script src="src/fnc_data_song.js"></script>
+	<script src="src/fnc_main_song.js"></script>
+	<script src="src/op.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="src/tcs_style_song.css">
+</head>
+
+<body onload="startup()">
+	<div class="center">
+		<table id="mainTable">
+			<thead>
+				<tr>
+					<td colspan="5" class="tb_header">Battle No. <span id="lblCount">-</span><br>
+						<div id="GaGprog"><div id="progressText"><span id="lblProgress">0</span>% sorted.</div></div>
+					</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td id="fldLeft" onclick="fnc_Sort(-1);" rowspan="2"><img src="images/image.jpg" title="Left"></td>
+					<td style="border: 0; width: 7px;"></td>
+					<td id="fldMiddleT" onclick="fnc_Sort(0);"><p>Misericorde</p><p>Song Sort</p></td>
+					<td style="border: 0; width: 7px;"></td>
+					<td id="fldRight" onclick="fnc_Sort(1);" rowspan="2"><img src="images/image.jpg" title="Right"></td>
+				</tr>
+				<tr>
+					<td style="border: 0; width: 7px;"></td>
+					<td id="fldMiddleB" onclick="fnc_Undo();">Click to start!</td>
+					<td style="border: 0; width: 7px;"></td>
+				</tr>
+				<tr>
+					<td id="texLeft" onclick="fnc_Sort(-1);" rowspan="2"><span id="nameLeft">Song here!</span><br><span id="gameLeft">This song's game!</span><br><br><span id="detailLeft">This song's description!</span></td>
+					<td style="border: 0; width: 7px;"></td>
+					<td id="fldMiddleS" class="inactive" onclick="fnc_Save();">Save Progress</td>
+					<td style="border: 0; width: 7px;"></td>
+					<td id="texRight" onclick="fnc_Sort(1);" rowspan="2"><span id="nameRight">Another song here!</span><br><span id="gameRight">The other song's game!</span><br><br><span id="detailRight">The other song's description!</span></td>
+				</tr>
+				<tr>
+					<td style="border: 0; width: 7px;"></td>
+					<td id="fldMiddleL" class="inactive" onclick="fnc_Load();">Load Progress</td>
+					<td style="border: 0; width: 7px;"></td>
+				</tr>
+				<tr>
+					<td id="youLeft"><span></span></td>
+					<td id="youMiddle" colspan="3"></td>
+					<td id="youRight"><span></span></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5"><div class="center">
+						<input id="optImage" checked="checked" type="checkbox">
+						<span class="tb_lower"><label for="optImage">Embed videos while sorting</label> (recommended, though it may be slow on some computers!)</span></div></td>
+				</tr>
+				<tr>
+					<td colspan="5"><div class="center">
+						<input id="optArrange" checked="checked" type="checkbox">
+						<span class="tb_lower"><label for="optArrange">Include Wrong RPM tracks</label> (uncheck to only include original tracks).</span></div></td>
+				</tr>
+				<tr>
+					<td colspan="5"><div class="center">
+						<input id="optLute" checked="checked" type="checkbox">
+						<span class="tb_lower"><label for="optLute">Include lute tracks</label> (uncheck to have no lute tracks).</span></div></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<br>
+
+	<div id="optSelectList"></div>
+	<br>
+
+	<div id="ranTable" class="tb" style="display:none;">
+		<form>
+			<input value="Raw Text Results" onclick="OpenWnd()" type="button">
+			<input value="Switch Display Type" onclick="fnc_ShowData()" type="button">
+			<p class="screenshot-info">Full screenshot: Firefox: Press Shift+F2, type in "screenshot --fullpage filename.png".
+			<br>Chrome: Use the Screen Capture extension from the Chrome extensions webstore.</p>
+		</form>
+	</div>
+
+	<div class="bottom-text" id="resultField">
+		<p>
+			This code was adapted from kasha's Touhou Song Sorter
+			<br>
+			- <a href="https://kasha.dev/" target="_blank">kasha</a>
+			<br>
+			The latest update was 22nd August 2024.<br>
+			<br>
+			This is a sorter for XEECEE's Misericorde songs. Pick your volumes, and hit the Start button. (Volume 2 not included yet)<br>
+			Click on the song you like better from the two, or tie them if you like them equally or don't know them.<br>
+			<br>
+			Expect to spend many hours, especially if you don't use many ties.<br>
+			<br>
+		</p>
+	</div>
+</body>
+</html>

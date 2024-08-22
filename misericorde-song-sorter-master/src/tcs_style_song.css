@@ -1,0 +1,274 @@
+﻿@font-face {
+    font-family:'roboto';
+    src:url('../fonts/Roboto-Regular.ttf');
+}
+body {
+	font-family: 'roboto', Arial, Helvetica, sans-serif;
+}
+
+.center {
+	text-align: center;
+	font-size: 13px;
+}
+
+.tb_header {
+	padding-bottom: 10px;
+	text-align: left;
+}
+
+.tb_lower {
+	padding-bottom: 10px;
+    text-align: center;
+}
+
+#GaGprog {
+	width:522px;
+	position:relative;
+	height:24px;
+	border: 1px solid #333;
+}
+
+#gauge {
+	background-color:#00BB55;
+	width:0px;
+	height:100%;
+	position:absolute;
+}
+
+#progressText{
+	z-index:9;
+	position:absolute;
+	padding: 3px;
+}
+
+#mainTable {
+   font-size: 16px;
+   vertical-align: middle;
+   width: 530px;
+   margin-left: auto;
+   margin-right: auto;
+   border-collapse: separate;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+#fldLeft    {
+	text-align: center;
+	width: 180px;
+	height: 180px;
+	padding:0px;
+	border: 1px solid #333333;
+	cursor:pointer;
+	line-height: 0;
+}
+#fldRight   {
+	text-align: center;
+	width: 180px;
+	height: 180px;
+	padding:0px;
+	border: 1px solid #333333;
+	cursor:pointer;
+	line-height: 0;
+}
+
+#texLeft    {
+	text-align: center;
+	width: 180px;
+	height: 180px;
+	padding:0px;
+	border: 1px solid #333333;
+	cursor:pointer;
+	line-height: 100%;
+}
+#texRight   {
+	text-align: center;
+	width: 180px;
+	height: 180px;
+	padding:0px;
+	border: 1px solid #333333;
+	cursor:pointer;
+	line-height: 100%;
+}
+
+#gameLeft    {
+	text-align: center;
+	font-size: 11px;
+}
+#gameRight   {
+	text-align: center;
+	font-size: 11px;
+}
+
+#fldMiddleT {
+	text-align: center;
+	width: 150px;
+	height: 88px;
+	padding:0px;
+	border: 1px solid #333333;
+	cursor:pointer;
+}
+#youLeft {
+	text-align: center;
+	width: 180px;
+	padding:0px;
+	border: 1px solid #FFFFFF;
+	cursor:pointer;
+	height: 30px;
+}
+#youLeft a:link {
+	font-size: 16px;
+}
+#youRight {
+	text-align: center;
+	width: 180px;
+	padding:0px;
+	border: 1px solid #FFFFFF;
+	cursor:pointer;
+	height: 30px;
+}
+#youRight a:link {
+	font-size: 16px;
+}
+#youMiddle {
+	text-align: center;
+	width: 150px;
+	padding:0px;
+	border: 1px solid #FFFFFF;
+}
+#fldMiddleB, #fldMiddleS, #fldMiddleL {
+	text-align: center;
+	width: 150px;
+	height: 88px;
+	padding:0px;
+	border: 1px solid #333333;
+	cursor:pointer;
+}
+#fldMiddleB.inactive, #fldMiddleS.inactive, #fldMiddleL.inactive {
+	color: grey;
+	cursor: not-allowed;
+}
+
+.categoryTitle {
+	display: inline-block
+}
+#optSelectList {
+	line-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 650px;
+}
+#optSelectList .categoryHeading {
+	margin-top: 12px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+#optSelectList .categoryHeading .opt_toggleAll {
+	margin-left: 10px;
+}
+#optSelectList .categoryList {
+	display: flex;
+	flex-direction: column;
+	margin-left: 30px;
+}
+@media (min-width: 650px) {
+#optSelectList .categoryList {
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	column-gap: 10px;
+	max-height: 360px;
+}
+}
+.cbox {
+	cursor:pointer;
+	font-size: 12px;
+}
+.opt_toggleAll label {
+	cursor: pointer;
+}
+.optSelectList-disabled .cbox,
+.optSelectList-disabled .opt_toggleAll {
+	cursor: default;
+}
+
+div#resultField {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.resTable {
+	font-size:12px;
+	line-height:120%;
+	margin: 0.5em;
+	/* border:1px solid #000; */
+	border-collapse:collapse;
+	text-align: center;
+	display: inline-block;
+}
+
+.resTableH {
+	color:#ffffff;
+	background-color:#000000;
+	text-align:center;
+	border:1px solid #000;
+}
+.resTableL {
+	color:#000000;
+	border:1px solid #000000;
+	text-align:right;
+	padding-right:5px;
+	padding-left:20px;
+}
+.resTableR {
+	color:#000000;
+	border:1px solid #000000;
+	padding-left:5px;
+	font-size: 11px;
+    width: 350px;
+}
+
+a       {
+	text-decoration:none;
+	font-size: 11px;
+}
+a:link {
+	color: #6600FF;
+}
+a:visited {
+	color: #6600FF;
+}
+a:hover {
+	color: #FF6600;
+}
+
+#ranTable {
+	text-align: center;
+	width: 640px;
+}
+
+.screenshot-info {
+	font-size:12px;
+}
+
+.bottom-text {
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	text-align:center;
+}
+
+table.debugTable {
+	border-collapse: collapse;
+	border: 1px solid #000000;
+}
+table.debugTable tbody td {
+	border-collapse: collapse;
+	border: 1px solid #000;
+}
